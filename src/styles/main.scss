@@ -1,0 +1,13 @@
+/* This injects Tailwind's base styles and any base styles registered by plugins. */
+@tailwind base;
+/* ./your-css-folder/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import 'components/input';
+
+/* 3. Overrides */
+@import 'overrides/angular-material';
+@import "custom-theme";
