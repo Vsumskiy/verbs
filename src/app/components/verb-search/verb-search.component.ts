@@ -21,7 +21,6 @@ export class VerbSearchComponent implements OnInit {
         this.subscribeToSearchControl();
     }
 
-
     private subscribeToSearchControl(): void {
         this.searchControl.valueChanges.pipe(
             debounceTime(600),

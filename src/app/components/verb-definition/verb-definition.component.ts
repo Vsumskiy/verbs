@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TensesTypesEnum, TenseType, VerbInterface } from '@models/verb.model';
 
 
@@ -6,7 +6,6 @@ interface ConjugatedForms {
     tense: string;
     verb: string;
 }
-
 
 enum RomanNumberHTMLCodes {
     One = '&#8544;',
@@ -19,25 +18,19 @@ enum RomanNumberHTMLCodes {
     templateUrl: './verb-definition.component.html',
     styleUrls: ['./verb-definition.component.scss']
 })
-export class VerbDefinitionComponent implements OnInit {
+export class VerbDefinitionComponent {
     @Input()
-    set verbs(v) {
-        if (v) {
-            this.conjugatedForms = this.mapConjugatedForms(v)
+    set verbs(verbs) {
+        if (verbs) {
+            this.conjugatedForms = this.mapConjugatedForms(verbs)
         }
     };
 
-
     public conjugatedForms: ConjugatedForms[];
-
-    constructor() { }
-
-    ngOnInit(): void {
-    }
 
     private mapConjugatedForms(verbs: VerbInterface): ConjugatedForms[] {
         return verbs.conjugated_forms?.map(([tense, verb]) => {
-           const displayedTense = this.getRomanNumber(tense);
+            const displayedTense = this.getRomanNumber(tense);
             return { tense: displayedTense, verb }
         })
     }
