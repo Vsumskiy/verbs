@@ -1,11 +1,11 @@
-    <div fxLayoutAlign="start center" class="p-4">
-        <div fxLayout="column" fxFlex class="wrapper">
-            <app-verb-search (verbName)="onSearchVerb($event)">
-            </app-verb-search>
+<div fxLayoutAlign="start center" class="container p-4">
+    <div fxLayout="column" fxFlex class="wrapper" fxFlex.lg="50%">
+        <app-verb-search (verbName)="onSearchVerb($event)">
+        </app-verb-search>
 
-            <app-verb-definition [verbs]="verbDefinition$ | async">
-            </app-verb-definition>
-        </div>
-
+        <app-verb-definition [verbs]="verbDefinition$ | async">
+        </app-verb-definition>
     </div>
+
+</div>
 

@@ -4,10 +4,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-@import 'components/input';
-
-/* 3. Overrides */
-@import 'overrides/angular-material';
-@import "custom-theme";

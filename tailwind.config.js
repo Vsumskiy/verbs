@@ -2,79 +2,6 @@ const path = require('path');
 const process = require('process');
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
-const generatePalette = require(path.resolve(__dirname, ('src/tailwind/utils/generate-palette')));
-
-/**
- * Custom palettes
- *
- * Uses the generatePalette helper method to generate
- * Tailwind-like color palettes automatically
- */
-const customPalettes = {
-    primary: generatePalette('#00C2D4'),
-    accent: generatePalette('#5cb85c')
-};
-
-/**
- * Themes
- */
-const themes = {
-    // Default theme is required for theming system to work correctly
-    'default': {
-        primary: {
-            ...colors.indigo,
-            DEFAULT: colors.indigo[600]
-        },
-        accent: {
-            ...colors.blueGray,
-            DEFAULT: colors.blueGray[800]
-        },
-        warn: {
-            ...colors.red,
-            DEFAULT: colors.red[600]
-        },
-        'on-warn': {
-            500: colors.red['50']
-        }
-    },
-    // Rest of the themes will use the 'default' as the base theme
-    // and extend them with their given configuration
-    'sems': {
-        primary: {
-            ...customPalettes.primary,
-            DEFAULT: customPalettes.primary[600]
-        },
-        accent: {
-            ...customPalettes.accent,
-            DEFAULT: customPalettes.accent[800]
-        },
-        warn: {
-            ...colors.red,
-            DEFAULT: colors.red[600]
-        },
-        'on-warn': {
-            500: colors.red['50']
-        }
-    },
-    'indigo': {
-        primary: {
-            ...colors.teal,
-            DEFAULT: colors.teal[600]
-        }
-    },
-    'rose': {
-        primary: colors.rose
-    },
-    'purple': {
-        primary: {
-            ...colors.purple,
-            DEFAULT: colors.purple[600]
-        }
-    },
-    'amber': {
-        primary: colors.amber
-    }
-};
 
 /**
  * Tailwind configuration
@@ -100,21 +27,13 @@ const config = {
     theme: {
         colors: {
             transparent: 'transparent',
-            current: 'currentColor',
-            black: colors.black,
-            white: colors.white,
-            pink: colors.pink,
-            gray: colors.blueGray,
-            red: colors.red,
-            orange: colors.orange,
-            amber: colors.amber,
             yellow: colors.yellow,
+            purple: colors.purple,
+            grey: colors.coolGray,
             green: colors.green,
-            teal: colors.teal,
-            blue: colors.blue,
-            indigo: colors.indigo,
-            purple: colors.purple
+            warn: colors.red,
         },
+
         fontSize: {
             'xs': '0.625rem',
             'sm': '0.75rem',
@@ -467,17 +386,12 @@ const config = {
     },
     plugins: [
 
-        // verb - Tailwind plugins
-        require(path.resolve(__dirname, ('src/tailwind/plugins/extract-config'))),
-        require(path.resolve(__dirname, ('src/tailwind/plugins/utilities'))),
-        require(path.resolve(__dirname, ('src/tailwind/plugins/icon-size'))),
-        require(path.resolve(__dirname, ('src/tailwind/plugins/theming')))({themes}),
-
         // Other third party and/or custom plugins
         require('@tailwindcss/typography')({modifiers: ['sm', 'lg']}),
         require('@tailwindcss/aspect-ratio'),
-        require('@tailwindcss/line-clamp')
-    ]
+        require('@tailwindcss/line-clamp'),
+
+]
 };
 
 module.exports = config;

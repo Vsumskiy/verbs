@@ -1,26 +1,15 @@
-export interface Conditional {
-    heading: string;
-    forms: string[][];
+import { ConjugationTablesInterface } from '@models/conjugation-tables.interface';
+
+export enum TensesTypesEnum {
+    Infinitive = 'Infinitive',
+    Simple_Past = 'Simple Past',
+    Past_Participle = 'Past Participle'
 }
 
-export interface Indicative {
-    heading: string;
-    forms: string[][];
-}
-
-export interface Passive {
-    heading: string;
-    forms: string[][];
-}
-
-export interface ConjugationTables {
-    conditional: Conditional[];
-    indicative: Indicative[];
-    passive: Passive[];
-}
+export type TenseType = TensesTypesEnum.Infinitive | TensesTypesEnum.Simple_Past | TensesTypesEnum.Past_Participle;
 
 export interface VerbInterface {
-    conjugated_forms: string[][];
-    conjugation_tables: ConjugationTables;
+    conjugated_forms: [TenseType, string][];
+    conjugation_tables: ConjugationTablesInterface;
 }
 
