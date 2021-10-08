@@ -19,20 +19,20 @@ enum RomanNumberHTMLCodes {
     styleUrls: ['./verb-definition.component.scss']
 })
 export class VerbDefinitionComponent {
+    public conjugatedForms: ConjugatedForms[];
+
     @Input()
     set verbs(verbs) {
         if (verbs) {
-            this.conjugatedForms = this.mapConjugatedForms(verbs)
+            this.conjugatedForms = this.mapConjugatedForms(verbs);
         }
     };
-
-    public conjugatedForms: ConjugatedForms[];
 
     private mapConjugatedForms(verbs: VerbInterface): ConjugatedForms[] {
         return verbs.conjugated_forms?.map(([tense, verb]) => {
             const displayedTense = this.getRomanNumber(tense);
-            return { tense: displayedTense, verb }
-        })
+            return { tense: displayedTense, verb };
+        });
     }
 
     private getRomanNumber(tense: TenseType): string {
@@ -40,7 +40,7 @@ export class VerbDefinitionComponent {
             [TensesTypesEnum.Infinitive]: RomanNumberHTMLCodes.One,
             [TensesTypesEnum.Simple_Past]: RomanNumberHTMLCodes.Two,
             [TensesTypesEnum.Past_Participle]: RomanNumberHTMLCodes.Three
-        }
+        };
 
         return romanNumbers[tense];
     }

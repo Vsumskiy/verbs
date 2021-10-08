@@ -1,8 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="space-between">
-    <div *ngFor="let verb of conjugatedForms" fxLayout="row" fxFlex="30%">
-            <div fxLayout="column" class="rounded-xl border border-gray-300 p-2" fxFlex>
-                <h3 class="text-3xl0" [innerHTML]="verb.tense"></h3>
-                <p><b>{{verb.verb}}</b></p>
-            </div>
+    <div *ngFor="let verb of conjugatedForms" fxFlex="30%" fxLayout="row">
+        <div class="rounded-xl border border-gray-300 p-2" fxFlex fxLayout="column">
+            <h3 [innerHTML]="verb.tense" class="text-3xl0"></h3>
+            <p><b>{{verb.verb}}</b></p>
+        </div>
     </div>
 </div>

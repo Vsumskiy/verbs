@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {SearchVersService} from '@services/search-vers.service';
-import {Observable} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { SearchVersService } from '@services/search-vers.service';
+import { Observable } from 'rxjs';
 import { VerbInterface } from '@models/verb.model';
 
 @Component({
