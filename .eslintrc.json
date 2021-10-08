@@ -1,0 +1,150 @@
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json",
+          "e2e/tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": [
+              "app",
+              "fuse"
+            ],
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": [
+              "app",
+              "fuse"
+            ],
+            "style": "camelCase"
+          }
+        ],
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": [
+              "camelCase"
+            ]
+          }
+        ],
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/indent": ["error", 4],
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": [
+          "error"
+        ],
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            "types": {
+              "Object": {
+                "message": "Avoid using the `Object` type. Did you mean `object`?"
+              },
+              "Function": {
+                "message": "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."
+              },
+              "Boolean": {
+                "message": "Avoid using the `Boolean` type. Did you mean `boolean`?"
+              },
+              "Number": {
+                "message": "Avoid using the `Number` type. Did you mean `number`?"
+              },
+              "String": {
+                "message": "Avoid using the `String` type. Did you mean `string`?"
+              },
+              "Symbol": {
+                "message": "Avoid using the `Symbol` type. Did you mean `symbol`?"
+              }
+            }
+          }
+        ],
+        "no-console": [
+          "error",
+          {
+            "allow": [
+              "log",
+              "warn",
+              "dir",
+              "timeLog",
+              "assert",
+              "clear",
+              "count",
+              "countReset",
+              "group",
+              "groupEnd",
+              "table",
+              "dirxml",
+              "error",
+              "groupCollapsed",
+              "Console",
+              "profile",
+              "profileEnd",
+              "timeStamp",
+              "context"
+            ]
+          }
+        ],
+        "arrow-parens": [
+          "off",
+          "always"
+        ],
+        "brace-style": [
+          "off",
+          "off"
+        ],
+        "import/order": "off",
+        "max-len": [
+          "error",
+          {
+            "ignorePattern": "^import |^export | implements",
+            "code": 180
+          }
+        ],
+        "no-trailing-spaces": "off",
+        "object-shorthand": "off"
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "plugins": [
+        "@angular-eslint"
+      ],
+      "rules": {
+      }
+    }
+  ]
+}
