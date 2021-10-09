@@ -8,6 +8,8 @@ import { AppRouterModule } from '@app/app-router.module';
 import { AppComponent } from './app.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '@environments/environment';
 
 @NgModule({
     declarations: [AppComponent],
@@ -19,6 +21,10 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
         RouterModule,
         LoadingBarModule,
         LoadingBarHttpClientModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
     ],
     providers: [],
     bootstrap: [AppComponent]
