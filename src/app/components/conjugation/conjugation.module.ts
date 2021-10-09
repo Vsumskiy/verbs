@@ -1,18 +1,19 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ConjugationComponent } from 'src/app/components/conjugation/conjugation.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { VerbSearchComponent } from 'src/app/components/verb-search/verb-search.component';
 import { FlexModule } from '@angular/flex-layout';
 import { CustomIconModule } from '@app/core/components/custom-icon/custom-icon.module';
 import { LabelWithIconModule } from '@core/components/label-with-icon/label-with-icon.module';
 
 
+
 @NgModule({
     declarations: [
-        VerbSearchComponent
+        ConjugationComponent
     ],
     exports: [
-        VerbSearchComponent
+        ConjugationComponent
     ],
     imports: [
         CommonModule,
@@ -22,4 +23,4 @@ import { LabelWithIconModule } from '@core/components/label-with-icon/label-with
         LabelWithIconModule
     ]
 })
-export class VerbSearchModule {}
+export class ConjugationModule { }

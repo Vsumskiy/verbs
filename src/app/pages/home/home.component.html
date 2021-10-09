@@ -1,7 +1,7 @@
-<div class="container p-4" fxLayoutAlign="start center">
+<div class="container p-4" fxLayoutAlign="center center">
     <div class="wrapper" fxFlex fxFlex.lg="50%" fxLayout="column">
-        <app-verb-search (verbName)="onSearchVerb($event)">
-        </app-verb-search>
+
+        <app-verb-search (verbName)="onSearchVerb($event)"></app-verb-search>
 
         <div class="flex flex-col divide-y divide-y divide-yellow-500"
              [@animate]="{ value: '*', params: { delay: '20ms', scale: '0.1' } }"
@@ -11,33 +11,20 @@
             <ng-container *ngIf="verbs.conjugated_forms; else empty">
                 <app-verb-definition class="pb-6" [verbs]="verbs.conjugated_forms">
                 </app-verb-definition>
-
-                <app-indicative class="pb-6" [examples]="verbs.conjugation_tables.indicative">
-                </app-indicative>
+                <app-verb-examples
+                        [verb]="verbs" [conjugationContext]="conjugationContext"
+                        (switchConjugationContext)="onSwitchConjugationContext($event)">
+                </app-verb-examples>
             </ng-container>
 
 
             <ng-template #empty>
-                <div fxLayout="column" fxLayoutAlign="center center">
-
-                    <div  class="text-5xl text-warn-500">
-                        <app-custom-icon iconName="search-minus">
-                        </app-custom-icon>
-                    </div>
-                    <p class="text-2xl text-grey-700 font-semibold">
-                        We looked high and low, but…
-                    </p>
-                    <p class="text-5xl text-warn-500">
-                        “{{typedWord}}” isn't here!
-                    </p>
-                </div>
+                <app-empty-result [typedWord]="typedWord"></app-empty-result>
             </ng-template>
         </div>
 
         <ng-template #loading>
-            <app-verb-definition-skeleton
-                    [count]="6">
-            </app-verb-definition-skeleton>
+            <app-verb-definition-skeleton [count]="6"></app-verb-definition-skeleton>
         </ng-template>
     </div>
 

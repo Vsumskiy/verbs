@@ -1,12 +1,9 @@
 <div class="mt-4">
-    <div class="mb-3.5" fxLayoutAlign="start baseline" fxLayoutGap="8px">
-        <label class="block text-gray-700 text-sm font-bold mb-2 primary" for="tenses">Indicative</label>
-        <app-custom-icon iconName="stopwatch"></app-custom-icon>
-    </div>
+    <app-label-with-icon icon="stopwatch" for="tenses" title="Tense"></app-label-with-icon>
     <select id="tenses" [formControl]="tenseSelect"
             class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white focus:outline-none">
         <option *ngFor="let indicate of indicative" [value]="indicate.heading">
-            {{indicate.heading}}
+            {{indicate.heading | titlecase}}
         </option>
     </select>
 

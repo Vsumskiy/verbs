@@ -1,0 +1,13 @@
+<div class="pt-6 flex-col">
+    <app-label-with-icon icon="feather" title="Sentence Type"></app-label-with-icon>
+    <app-button-group activeClass="bg-grey-800">
+        <button *ngFor="let keyvalue of verb.conjugation_tables | keyvalue"
+                [attr.active]="keyvalue.key === conjugationContext"
+                (click)="onSwitchConjugationContext(keyvalue.key)"
+                class="bg-grey-400 text-grey-50 font-bold py-2 px-4 outline-none">
+            {{keyvalue.key | titlecase}}
+        </button>
+    </app-button-group>
+
+    <app-conjugation class="pb-6" [examples]="verb.conjugation_tables[conjugationContext]"></app-conjugation>
+</div>

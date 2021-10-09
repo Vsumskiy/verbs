@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomIconComponent } from './custom-icon.component';
+import { ButtonGroupComponent } from './button-group.component';
 
 
 
 @NgModule({
     declarations: [
-        CustomIconComponent
+        ButtonGroupComponent
     ],
     exports: [
-        CustomIconComponent
+        ButtonGroupComponent
     ],
     imports: [
         CommonModule
     ]
 })
-export class CustomIconModule { }
+export class ButtonGroupModule { }

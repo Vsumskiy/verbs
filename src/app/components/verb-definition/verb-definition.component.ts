@@ -15,8 +15,7 @@ enum RomanNumberHTMLCodes {
 
 @Component({
     selector: 'app-verb-definition',
-    templateUrl: './verb-definition.component.html',
-    styleUrls: ['./verb-definition.component.scss']
+    templateUrl: './verb-definition.component.html'
 })
 export class VerbDefinitionComponent {
     public conjugatedForms: ConjugatedForms[];

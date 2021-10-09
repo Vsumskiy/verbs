@@ -5,8 +5,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { VerbDefinitionModule } from '@app/components/verb-definition/verb-definition.module';
 import { VerbSearchModule } from '@app/components/verb-search/verb-search.module';
 import { HomeComponent } from './home.component';
-import { IndicativeModule } from '@app/components/indicative/indicative.module';
-import { CustomIconModule } from '@app/components/custom-icon/custom-icon.module';
+import { ConjugationModule } from '@app/components/conjugation/conjugation.module';
+import { CustomIconModule } from '@app/core/components/custom-icon/custom-icon.module';
+import { ButtonGroupModule } from '@core/components/button-group/button-group.module';
+import { LabelWithIconModule } from '@core/components/label-with-icon/label-with-icon.module';
+import { VerbExamplesModule } from '@app/components/verb-examples/verb-examples.module';
+import { EmptyResultComponent } from './empty-result/empty-result.component';
 
 const paths: Routes = [
     {
@@ -16,15 +20,18 @@ const paths: Routes = [
 ];
 
 @NgModule({
-    declarations: [HomeComponent],
+    declarations: [HomeComponent, EmptyResultComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(paths),
         VerbSearchModule,
         VerbDefinitionModule,
         FlexModule,
-        IndicativeModule,
+        ConjugationModule,
         CustomIconModule,
+        ButtonGroupModule,
+        LabelWithIconModule,
+        VerbExamplesModule,
     ]
 })
 export class HomeModule {}

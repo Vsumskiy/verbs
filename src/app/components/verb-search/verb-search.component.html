@@ -1,11 +1,9 @@
 <div class="mb-4">
-    <div class="mb-3.5" fxLayoutAlign="start baseline" fxLayoutGap="8px">
-        <label class="block text-gray-700 text-sm font-bold mb-2 primary" for="verb">Verb</label>
-        <app-custom-icon iconName="turtle"></app-custom-icon>
-    </div>
+    <app-label-with-icon [for]="'verb'" icon="turtle" title="Verb"></app-label-with-icon>
     <div class="relative text-gray-700">
         <input [formControl]="searchControl"
                #input
+               (keydown.space)="$event.preventDefault()"
                autocomplete="off"
                id="verb"
                class="w-full h-10 pl-3 pr-8 placeholder-gray-600 border rounded-lg focus:shadow-outline"
