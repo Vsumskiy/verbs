@@ -20,7 +20,7 @@ const paths: Routes = [
         RouterModule.forChild(paths),
         VerbSearchModule,
         VerbDefinitionModule,
-        FlexModule
+        FlexModule,
     ]
 })
 export class HomeModule {}

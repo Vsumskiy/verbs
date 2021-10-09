@@ -1,18 +1,17 @@
 <div class="mb-4">
     <div fxLayout="row" fxLayoutAlign="space-between baseline" class="mb-3.5">
-        <label class="block text-gray-700 text-sm font-bold mb-2 primary" for="verb"> Search!! </label>
-        <button class="bg-purple-500 text-grey-50 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            (click)="toggleRecord()">
-            {{ (listenSpeech$ | async) ? 'Listening...' : 'Start Record' }} [Beta]
-        </button>
-
+        <label class="block text-gray-700 text-sm font-bold mb-2 primary" for="verb"> Search</label>
     </div>
-    <input
-            appSpeech
-            [switcher]="listenSpeech$ | async"
-            (speech)="onBindSpeechToFormControlValue($event)"
-            [formControl]="searchControl"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline outline-none"
-            id="verb" placeholder="Start typing here..." type="text">
+    <div class="relative text-gray-700">
+        <input [formControl]="searchControl"
+               id="verb"
+               class="w-full h-10 pl-3 pr-8 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
+               type="text" placeholder="Regular input"/>
+        <button
+                (click)="searchControl.reset()"
+                class="absolute inset-y-0 right-0 flex items-center px-4 font-bold text-grey-500">
+            <app-custom-icon iconName="times"></app-custom-icon>
+        </button>
+    </div>
 </div>
 

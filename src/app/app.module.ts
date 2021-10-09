@@ -18,7 +18,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
         HttpClientModule,
         RouterModule,
         LoadingBarModule,
-        LoadingBarHttpClientModule
+        LoadingBarHttpClientModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

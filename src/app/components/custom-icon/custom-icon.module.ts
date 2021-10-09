@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SpeechDirective } from './speech.directive';
+import { CustomIconComponent } from './custom-icon.component';
 
 
 
 @NgModule({
     declarations: [
-        SpeechDirective
+        CustomIconComponent
     ],
     exports: [
-        SpeechDirective
+        CustomIconComponent
     ],
     imports: [
         CommonModule
     ]
 })
-export class SpeechDirectiveModule { }
+export class CustomIconModule { }

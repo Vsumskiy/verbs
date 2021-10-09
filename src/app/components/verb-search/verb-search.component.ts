@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Component({
     selector: 'app-verb-search',
@@ -14,23 +13,13 @@ export class VerbSearchComponent implements OnInit {
 
     public searchControl = this.fb.control('');
 
-    public listenSpeech$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
     constructor(
         private fb: FormBuilder
     ) {}
 
     ngOnInit(): void {
         this.subscribeToSearchControl();
-    }
-
-    public onBindSpeechToFormControlValue(speech: string): void {
-        this.searchControl.setValue(speech);
-    }
-
-    public toggleRecord(): void {
-        const isRecording = this.listenSpeech$.value;
-        this.listenSpeech$.next(!isRecording);
+        this.searchControl.setValue('do');
     }
 
     private subscribeToSearchControl(): void {

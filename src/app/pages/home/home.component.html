@@ -3,8 +3,19 @@
         <app-verb-search (verbName)="onSearchVerb($event)">
         </app-verb-search>
 
-        <app-verb-definition [verbs]="verbDefinition$ | async">
-        </app-verb-definition>
+        <div class="backdrop-filter backdrop-blur-lg"
+             [@animate]="{ value: '*', params: { delay: '20ms', scale: '0.1' } }"
+             *ngIf="verbDefinition$ | async as verbs; else loading">
+            <app-verb-definition [verbs]="verbs">
+            </app-verb-definition>
+        </div>
+
+        <ng-template #loading>
+            <app-verb-definition-skeleton
+                    [count]="3">
+            </app-verb-definition-skeleton>
+        </ng-template>
     </div>
+
 
 </div>
