@@ -8,8 +8,11 @@ export enum TensesTypesEnum {
 
 export type TenseType = TensesTypesEnum.Infinitive | TensesTypesEnum.Simple_Past | TensesTypesEnum.Past_Participle;
 
+
+export type ConjugatedFormsType = [TenseType, string][];
+
 export interface VerbInterface {
-    conjugated_forms: [TenseType, string][];
+    conjugated_forms: ConjugatedFormsType;
     conjugation_tables: ConjugationTablesInterface;
 }
 

@@ -1,14 +1,17 @@
 <div class="mb-4">
-    <div fxLayout="row" fxLayoutAlign="space-between baseline" class="mb-3.5">
-        <label class="block text-gray-700 text-sm font-bold mb-2 primary" for="verb"> Search</label>
+    <div class="mb-3.5" fxLayoutAlign="start baseline" fxLayoutGap="8px">
+        <label class="block text-gray-700 text-sm font-bold mb-2 primary" for="verb">Verb</label>
+        <app-custom-icon iconName="turtle"></app-custom-icon>
     </div>
     <div class="relative text-gray-700">
         <input [formControl]="searchControl"
+               #input
+               autocomplete="off"
                id="verb"
-               class="w-full h-10 pl-3 pr-8 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"
-               type="text" placeholder="Regular input"/>
+               class="w-full h-10 pl-3 pr-8 placeholder-gray-600 border rounded-lg focus:shadow-outline"
+               type="text" placeholder="Start typing here..."/>
         <button
-                (click)="searchControl.reset()"
+                (click)="searchControl.reset(); input.focus()"
                 class="absolute inset-y-0 right-0 flex items-center px-4 font-bold text-grey-500">
             <app-custom-icon iconName="times"></app-custom-icon>
         </button>

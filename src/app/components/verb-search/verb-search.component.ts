@@ -24,7 +24,7 @@ export class VerbSearchComponent implements OnInit {
 
     private subscribeToSearchControl(): void {
         this.searchControl.valueChanges.pipe(
-            debounceTime(400),
+            debounceTime(800),
             distinctUntilChanged(),
             filter(v => Boolean(v))
         ).subscribe(value => this.verbName.emit(value));

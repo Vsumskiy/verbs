@@ -130,7 +130,8 @@
           }
         ],
         "no-trailing-spaces": "off",
-        "object-shorthand": "off"
+        "object-shorthand": "off",
+        "prefer-arrow/prefer-arrow-functions": "off"
       }
     },
     {

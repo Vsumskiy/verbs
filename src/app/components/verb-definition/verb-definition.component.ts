@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TensesTypesEnum, TenseType, VerbInterface } from '@models/verb.model';
+import { ConjugatedFormsType, TensesTypesEnum, TenseType } from '@models/verb.model';
 
 
 interface ConjugatedForms {
@@ -22,14 +22,14 @@ export class VerbDefinitionComponent {
     public conjugatedForms: ConjugatedForms[];
 
     @Input()
-    set verbs(verbs) {
+    set verbs(verbs: ConjugatedFormsType) {
         if (verbs) {
             this.conjugatedForms = this.mapConjugatedForms(verbs);
         }
     };
 
-    private mapConjugatedForms(verbs: VerbInterface): ConjugatedForms[] {
-        return verbs.conjugated_forms?.map(([tense, verb]) => {
+    private mapConjugatedForms(verbs: ConjugatedFormsType): ConjugatedForms[] {
+        return verbs?.map(([tense, verb]) => {
             const displayedTense = this.getRomanNumber(tense);
             return { tense: displayedTense, verb };
         });

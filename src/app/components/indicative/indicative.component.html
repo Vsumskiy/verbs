@@ -1,0 +1,32 @@
+<div class="mt-4">
+    <div class="mb-3.5" fxLayoutAlign="start baseline" fxLayoutGap="8px">
+        <label class="block text-gray-700 text-sm font-bold mb-2 primary" for="tenses">Indicative</label>
+        <app-custom-icon iconName="stopwatch"></app-custom-icon>
+    </div>
+    <select id="tenses" [formControl]="tenseSelect"
+            class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white focus:outline-none">
+        <option *ngFor="let indicate of indicative" [value]="indicate.heading">
+            {{indicate.heading}}
+        </option>
+    </select>
+
+
+    <div class="example mt-4" *ngIf="tenseExamples$ | async as examples">
+        <div *ngFor="let example of examples">
+
+            <div *ngFor="let form of example.forms" class="tracking-wider mb-1.5">
+                <div fxLayoutGap="8px">
+                    <app-custom-icon iconName="dot-circle"></app-custom-icon>
+                    <span>
+                       <b>{{form[pronounEnum.Pronoun]}}</b>
+                        {{form[pronounEnum.Verb]}}
+                    </span>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
