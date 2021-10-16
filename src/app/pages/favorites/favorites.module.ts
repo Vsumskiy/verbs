@@ -9,6 +9,8 @@ import { VerbDefinitionModule } from '@app/components/verb-definition/verb-defin
 import { VerbExamplesModule } from '@app/components/verb-examples/verb-examples.module';
 import { FlexModule } from '@angular/flex-layout';
 import { AddToFavoritesModule } from '@app/components/add-to-favorites/add-to-favorites.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FilterPipeModule } from '@core/pipes/filter-pipe/filter-pipe.module';
 
 const routes: Routes = [
     {
@@ -37,7 +39,9 @@ const routes: Routes = [
         VerbDefinitionModule,
         VerbExamplesModule,
         FlexModule,
-        AddToFavoritesModule
+        AddToFavoritesModule,
+        ReactiveFormsModule,
+        FilterPipeModule
     ],
     exports: [
         FavoriteVerbComponent

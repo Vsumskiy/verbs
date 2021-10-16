@@ -4,8 +4,7 @@ import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 
 @Component({
     selector: 'app-verb-search',
-    templateUrl: './verb-search.component.html',
-    styleUrls: ['./verb-search.component.scss']
+    templateUrl: './verb-search.component.html'
 })
 export class VerbSearchComponent implements OnInit {
 
