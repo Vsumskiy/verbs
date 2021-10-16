@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
+import { SearchVerbsService } from '@services/search-verbs.service';
 
 @Component({
     selector: 'app-verb-search',
@@ -13,12 +14,13 @@ export class VerbSearchComponent implements OnInit {
     public searchControl = this.fb.control('');
 
     constructor(
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private searchVerbsService: SearchVerbsService
     ) {}
 
     ngOnInit(): void {
         this.subscribeToSearchControl();
-        this.searchControl.setValue('do');
+        this.searchControl.setValue(this.searchVerbsService.lastTypedWord);
     }
 
     private subscribeToSearchControl(): void {

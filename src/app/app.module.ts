@@ -11,6 +11,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '@environments/environment';
 
+
 @NgModule({
     declarations: [AppComponent],
     imports: [
@@ -26,7 +27,6 @@ import { environment } from '@environments/environment';
             registrationStrategy: 'registerWhenStable:30000'
         }),
     ],
-    providers: [],
     bootstrap: [AppComponent]
 
 })

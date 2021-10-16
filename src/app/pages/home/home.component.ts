@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchVersService } from '@services/search-vers.service';
+import { SearchVerbsService } from '@services/search-verbs.service';
 import { Observable } from 'rxjs';
 import { VerbInterface } from '@models/verb.model';
 import { animations } from '@core/animations/animations';
@@ -17,7 +17,7 @@ export class HomeComponent {
     public conjugationContext: ConjugationContext = 'conditional';
 
     constructor(
-        private searchVerbService: SearchVersService
+        private searchVerbService: SearchVerbsService
     ) { }
 
     public onSearchVerb(verb: string) {

@@ -41,7 +41,7 @@ const routes: Routes = [
         FlexModule,
         AddToFavoritesModule,
         ReactiveFormsModule,
-        FilterPipeModule
+        FilterPipeModule,
     ],
     exports: [
         FavoriteVerbComponent

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FavoriteService } from '@services/favorite.service';
-import { SearchVersService } from '@services/search-vers.service';
+import { SearchVerbsService } from '@services/search-verbs.service';
 import { Subject } from 'rxjs';
 import { animations } from '@core/animations/animations';
 
@@ -27,7 +27,7 @@ export class AddToFavoritesComponent implements OnInit {
 
     constructor(
         private favoriteService: FavoriteService,
-        private searchVerbService: SearchVersService
+        private searchVerbService: SearchVerbsService
     ) { }
 
     ngOnInit(): void {
