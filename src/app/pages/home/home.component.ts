@@ -17,7 +17,7 @@ export class HomeComponent {
     public conjugationContext: ConjugationContext = 'conditional';
 
     constructor(
-        private searchVerbService: SearchVersService,
+        private searchVerbService: SearchVersService
     ) { }
 
     public onSearchVerb(verb: string) {

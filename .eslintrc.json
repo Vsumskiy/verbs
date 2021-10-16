@@ -7,8 +7,7 @@
       ],
       "parserOptions": {
         "project": [
-          "tsconfig.json",
-          "e2e/tsconfig.json"
+          "tsconfig.json"
         ],
         "createDefaultProgram": true
       },
@@ -23,8 +22,7 @@
           {
             "type": "element",
             "prefix": [
-              "app",
-              "fuse"
+              "app"
             ],
             "style": "kebab-case"
           }
@@ -34,8 +32,7 @@
           {
             "type": "attribute",
             "prefix": [
-              "app",
-              "fuse"
+              "app"
             ],
             "style": "camelCase"
           }
@@ -57,7 +54,10 @@
           }
         ],
         "@typescript-eslint/member-ordering": "off",
-        "@typescript-eslint/indent": ["error", 4],
+        "@typescript-eslint/indent": [
+          "error",
+          4
+        ],
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": [
           "error"

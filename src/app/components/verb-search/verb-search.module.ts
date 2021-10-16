@@ -5,6 +5,8 @@ import { VerbSearchComponent } from 'src/app/components/verb-search/verb-search.
 import { FlexModule } from '@angular/flex-layout';
 import { CustomIconModule } from '@app/core/components/custom-icon/custom-icon.module';
 import { LabelWithIconModule } from '@core/components/label-with-icon/label-with-icon.module';
+import { FavoritesModule } from '@pages/favorites/favorites.module';
+import { AddToFavoritesModule } from '@app/components/add-to-favorites/add-to-favorites.module';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { LabelWithIconModule } from '@core/components/label-with-icon/label-with
         ReactiveFormsModule,
         FlexModule,
         CustomIconModule,
-        LabelWithIconModule
+        LabelWithIconModule,
+        FavoritesModule,
+        AddToFavoritesModule
     ]
 })
 export class VerbSearchModule {}

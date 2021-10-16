@@ -29,5 +29,4 @@ export class VerbSearchComponent implements OnInit {
             filter(v => Boolean(v))
         ).subscribe(value => this.verbName.emit(value));
     }
-
 }

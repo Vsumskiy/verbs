@@ -1,0 +1,42 @@
+<div class="flex flex-col self-center mx-auto p-7" fxFlex.lg="50%">
+    <div class="flex flex-wrap w-full max-w-screen-xl mx-auto page-title">
+        <div class="header flex items-center justify-start items-center w-full">
+
+            <div [@animate]="{ value: '*', params: { delay: '100ms', x: '-25px' } }"
+                 class="mr-3 flex items-center">
+                <button routerLink="">
+                    Verbs
+                </button>
+
+                <app-custom-icon class="ml-2" iconName="chevron-right"></app-custom-icon>
+
+                <button routerLink="/favorites" class="ml-2" >
+                    Favorites
+                </button>
+                <app-custom-icon class="ml-2" iconName="chevron-right"></app-custom-icon>
+            </div>
+
+            <h2 class="text-3xl font-semibold tracking-tight leading-8">
+                {{verb | titlecase}}
+            </h2>
+        </div>
+    </div>
+
+
+    <div class="content mt-9">
+        <div class="flex flex-col divide-y divide-y divide-yellow-500"
+             [@animate]="{ value: '*', params: { delay: '20ms', scale: '0.1' } }"
+             *ngIf="verbDefinition">
+
+            <ng-container *ngIf="verbDefinition.conjugated_forms">
+                <app-verb-definition class="pb-6" [verbs]="verbDefinition.conjugated_forms">
+                </app-verb-definition>
+                <app-verb-examples
+                        [verb]="verbDefinition" [conjugationContext]="conjugationContext"
+                        (switchConjugationContext)="onSwitchConjugationContext($event)">
+                </app-verb-examples>
+            </ng-container>
+        </div>
+    </div>
+
+</div>
