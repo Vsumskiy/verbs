@@ -1,19 +1,17 @@
-<ng-container *ngIf="staticVerb || (isVerbExist$ | async)">
+<div *ngIf="staticVerb || (isVerbExist$ | async)" class="ml-4">
     <button
-            [@animate]="{ value: '*', params: { delay: '100ms', x: '-25px' } }"
+            [@animate]="{ value: '*', params: { delay: '40ms', x: '-5px' } }"
             *ngIf="!savedVerbs.includes(verb)"
-            class="ml-4"
             (click)="onAddToTheFavorite()">
-        <span>&#9734;</span>
+        <span class="text-yellow-500">&#9734;</span>
         <span *ngIf="savedVerbs.includes(verb)">&#9733;</span>
     </button>
 
     <button
-            [@animate]="{ value: '*', params: { delay: '100ms', x: '-25px' } }"
+            [@animate]="{ value: '*', params: { delay: '40ms', x: '-5px' } }"
             *ngIf="savedVerbs.includes(verb)"
-            class="ml-4"
             (click)="onRemoveFromFavorites()">
-        <span>&#9733;</span>
+        <span class="text-yellow-500">&#9733;</span>
     </button>
 
-</ng-container>
+</div>

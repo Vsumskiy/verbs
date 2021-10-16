@@ -1,4 +1,4 @@
-<div class="flex flex-col self-center mx-auto p-7" fxFlex.lg="50%">
+<div class="flex flex-col self-center mx-auto p-4" fxFlex.lg="50%">
     <div class="flex flex-wrap w-full max-w-screen-xl mx-auto page-title">
         <div class="header flex items-center justify-start items-center w-full">
 
@@ -19,8 +19,9 @@
     <div class="w-full bg-grey-200 mt-9" *ngIf="favoritesWords$ | async as favoriteWords">
         <ul class="divide-y-2 divide-gray-100" *ngIf="favoriteWords.length; else empty">
             <li class="py-3 hover:bg-gray-50 cursor-pointer p-2 text-xl flex justify-between"
+                [routerLink]="verb"
                 *ngFor="let verb of favoriteWords">
-                <a [routerLink]="verb" class="w-full block">
+                <a>
                     {{verb}}
                 </a>
 
