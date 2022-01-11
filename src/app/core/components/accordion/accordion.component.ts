@@ -1,20 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-accordion',
     templateUrl: './accordion.component.html'
 })
-export class AccordionComponent implements OnInit {
-
-    public isOpen = false;
+export class AccordionComponent {
 
     @Input() title: string;
 
+    public isOpen = false;
 
-    ngOnInit(): void {
-    }
-
-    toggle() {
+    public toggle(): void {
         this.isOpen = !this.isOpen;
     }
 }
