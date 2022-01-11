@@ -44,15 +44,15 @@
                                 <div *ngIf="definition.synonyms?.length">
                                     <span class="font-bold">Synonyms: </span>
                                     <span *ngFor="let synonym of definition.synonyms; let last = last">
-                                        {{synonym}} <span *ngIf="!last">,</span>
+                                        {{synonym}}<span *ngIf="!last">,</span>
                                     </span>
                                 </div>
 
                                 <div *ngIf="definition.antonyms?.length">
                                     <span class="font-bold">Antonyms: </span>
-                                    <div *ngFor="let antonym of definition.antonyms;let last = last">
-                                        {{antonym}} <span *ngIf="!last">,</span>
-                                    </div>
+                                    <span *ngFor="let antonym of definition.antonyms;let last = last">
+                                        {{antonym}}<span *ngIf="!last">,</span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
