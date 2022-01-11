@@ -1,37 +1,9 @@
-<div class="container p-4" fxLayoutAlign="center center">
-    <div class="wrapper" fxFlex fxFlex.lg="50%" fxLayout="column">
-
-        <div class="self-end">
-            <a routerLink="favorites">Favorites</a>
-        </div>
-        <app-verb-search
-                (verbName)="onSearchVerb($event)">
-        </app-verb-search>
-
-        <div class="flex flex-col divide-y divide-y divide-yellow-500"
-             [@animate]="{ value: '*', params: { delay: '5ms', scale: '0.8' } }"
-             *ngIf="verbDefinition$ | async as verbs; else loading">
-
-
-            <ng-container *ngIf="verbs.conjugated_forms; else empty">
-                <app-verb-definition class="pb-6" [verbs]="verbs.conjugated_forms">
-                </app-verb-definition>
-                <app-verb-examples
-                        [verb]="verbs" [conjugationContext]="conjugationContext"
-                        (switchConjugationContext)="onSwitchConjugationContext($event)">
-                </app-verb-examples>
-            </ng-container>
-
-
-            <ng-template #empty>
-                <app-empty-result [typedWord]="typedWord"></app-empty-result>
-            </ng-template>
-        </div>
-
-        <ng-template #loading>
-            <app-verb-definition-skeleton [count]="6"></app-verb-definition-skeleton>
-        </ng-template>
+<div class="h-screen flex justify-center items-center">
+    <div class="flex gap-5">
+        <a class="bg-grey-400 hover:bg-grey-600 text-yellow-50 p-6 rounded text-xl" routerLink="../verbs">Verbs</a>
+        <a class="bg-grey-400 hover:bg-grey-600 text-yellow-50 p-6 rounded text-xl" routerLink="../dictionary">
+            Dictionary</a>
+        <a class="bg-grey-400 hover:bg-grey-600 text-yellow-50 p-6 rounded text-xl" routerLink="../favorites">Favorites
+        </a>
     </div>
-
-
 </div>

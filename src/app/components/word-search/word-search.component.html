@@ -1,8 +1,8 @@
 <div class="mb-4">
     <div class="flex items-baseline">
-        <app-label-with-icon [for]="'verb'" icon="turtle" title="Verb"></app-label-with-icon>
+        <app-label-with-icon [for]="'verb'" icon="turtle" title="Word"></app-label-with-icon>
 
-        <ng-container *ngIf="searchControl.value">
+        <ng-container>
             <app-add-to-favorites [currentVerb]="searchControl.value"></app-add-to-favorites>
         </ng-container>
     </div>

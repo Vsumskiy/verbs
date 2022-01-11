@@ -1,0 +1,65 @@
+<div fxLayout="column" fxLayoutGap="20px" class="overflow-y-scroll">
+    <div *ngFor="let word of words" fxFlex="30%" fxLayout="row">
+
+        <div class="rounded-xl border border-gray-300 p-2" fxFlex fxLayout="column" fxLayoutGap="10px"
+             *ngIf="word.origin">
+
+            <div>
+                <div *ngFor="let phonetic of word.phonetics">
+                    <div *ngIf="phonetic.audio">
+                        <button (click)="playAudio(phonetic.audio)">
+                            <app-custom-icon iconName="volume-up"></app-custom-icon>
+                        </button>
+                        <span class="font-bold ml-2">
+                            {{phonetic.text}}
+                         </span>
+                    </div>
+                </div>
+            </div>
+                <p>
+                    {{word.origin}}
+                </p>
+
+            <div class="flex flex-col gap-5">
+                <span class="font-bold text-xl">
+                    Parts of speech:
+                </span>
+                <div *ngFor="let meaning of word.meanings">
+
+                    <app-accordion [title]="meaning.partOfSpeech">
+
+                        <div class="flex flex-col gap-8 py-2">
+                            <div *ngFor="let definition of meaning.definitions" class="flex flex-col gap-2">
+
+                                <div>
+                                    <span class="font-bold">Definition: </span>
+                                    {{definition.definition}}
+                                </div>
+
+                                <div *ngIf="definition.example">
+                                    <span class="font-bold">Example: </span>
+                                    {{definition.example}}
+                                </div>
+
+                                <div *ngIf="definition.synonyms?.length">
+                                    <span class="font-bold">Synonyms: </span>
+                                    <span *ngFor="let synonym of definition.synonyms; let last = last">
+                                        {{synonym}} <span *ngIf="!last">,</span>
+                                    </span>
+                                </div>
+
+                                <div *ngIf="definition.antonyms?.length">
+                                    <span class="font-bold">Antonyms: </span>
+                                    <div *ngFor="let antonym of definition.antonyms;let last = last">
+                                        {{antonym}} <span *ngIf="!last">,</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </app-accordion>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

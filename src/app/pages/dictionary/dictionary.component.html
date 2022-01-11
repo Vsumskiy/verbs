@@ -1,0 +1,34 @@
+
+<div class="flex flex-col self-center mx-auto p-4 h-screen" fxFlex.lg="50%">
+
+    <app-breadcrumbs title="Dictionary"></app-breadcrumbs>
+
+    <div class="wrapper" fxFlex fxFlex.lg="50%" fxLayout="column">
+
+        <div class="self-end">
+            <a routerLink="../favorites">Favorites</a>
+        </div>
+        <app-word-search
+                (verbName)="onSearchVerb($event)">
+        </app-word-search>
+
+        <div class="flex flex-col divide-y divide-y divide-yellow-500"
+             [@animate]="{ value: '*', params: { delay: '5ms', scale: '0.8' } }"
+             *ngIf="!loadingState; else loading">
+
+            <ng-container *ngIf="wordDefinition; else empty">
+                <app-word-definition [words]="wordDefinition"></app-word-definition>
+            </ng-container>
+
+        </div>
+            <ng-template #empty>
+                <app-empty-result [typedWord]="typedWord"></app-empty-result>
+            </ng-template>
+        </div>
+
+        <ng-template #loading>
+            <app-verb-definition-skeleton [count]="6"></app-verb-definition-skeleton>
+        </ng-template>
+
+    </div>
+

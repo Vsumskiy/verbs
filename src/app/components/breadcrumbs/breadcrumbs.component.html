@@ -1,0 +1,16 @@
+<div class="flex flex-wrap w-full max-w-screen-xl mx-auto page-title flex-shrink-0">
+    <div class="header flex items-center justify-start items-center w-full">
+
+        <div [@animate]="{ value: '*', params: { delay: '100ms', x: '-25px' } }"
+             class="mr-3 flex items-center">
+            <button
+                    routerLink="">Home
+            </button>
+            <app-custom-icon class="ml-2" iconName="chevron-right"></app-custom-icon>
+        </div>
+
+        <h2 class="text-3xl font-semibold tracking-tight leading-8">
+            {{title}}
+        </h2>
+    </div>
+</div>

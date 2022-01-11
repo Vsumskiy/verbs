@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FavoriteService } from '@services/favorite.service';
-import { SearchVerbsService } from '@services/search-verbs.service';
 import { Subject } from 'rxjs';
 import { animations } from '@core/animations/animations';
+import { SearchWordService } from '@services/search-word.service';
 
 @Component({
     selector: 'app-add-to-favorites',
@@ -27,12 +27,12 @@ export class AddToFavoritesComponent implements OnInit {
 
     constructor(
         private favoriteService: FavoriteService,
-        private searchVerbService: SearchVerbsService
+        private searchWordService: SearchWordService
     ) { }
 
     ngOnInit(): void {
         this.savedVerbs = this.favoriteService.savedVerbs;
-        this.isVerbExist$ = this.searchVerbService.isEmptyResponse$;
+        this.isVerbExist$ = this.searchWordService.isEmptyResponse$;
     }
 
     public onAddToTheFavorite(): void {

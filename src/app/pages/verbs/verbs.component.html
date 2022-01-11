@@ -1,0 +1,39 @@
+
+<div class="flex flex-col self-center mx-auto p-4 h-screen overflow-hidden" fxFlex.lg="50%">
+
+    <app-breadcrumbs title="Verbs"></app-breadcrumbs>
+
+    <div class="wrapper" fxFlex fxFlex.lg="50%" fxLayout="column">
+
+        <div class="self-end">
+            <a routerLink="../favorites">Favorites</a>
+        </div>
+        <app-word-search
+                (verbName)="onSearchVerb($event)">
+        </app-word-search>
+
+        <div class="flex flex-col divide-y divide-y divide-yellow-500"
+             [@animate]="{ value: '*', params: { delay: '5ms', scale: '0.8' } }"
+             *ngIf="!loadingState; else loading">
+
+            <ng-container *ngIf="verbDefinition.conjugated_forms; else empty">
+                <app-verb-definition class="pb-6" [verbs]="verbDefinition.conjugated_forms">
+                </app-verb-definition>
+                <app-verb-examples
+                        [verb]="verbDefinition" [conjugationContext]="conjugationContext"
+                        (switchConjugationContext)="onSwitchConjugationContext($event)">
+                </app-verb-examples>
+            </ng-container>
+
+
+            <ng-template #empty>
+                <app-empty-result [typedWord]="typedWord"></app-empty-result>
+            </ng-template>
+        </div>
+
+        <ng-template #loading>
+            <app-verb-definition-skeleton [count]="6"></app-verb-definition-skeleton>
+        </ng-template>
+    </div>
+
+</div>

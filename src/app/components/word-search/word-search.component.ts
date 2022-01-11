@@ -1,13 +1,13 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
-import { SearchVerbsService } from '@services/search-verbs.service';
+import { debounceTime, distinctUntilChanged, filter, skip } from 'rxjs/operators';
+import { SearchWordService } from '@services/search-word.service';
 
 @Component({
-    selector: 'app-verb-search',
-    templateUrl: './verb-search.component.html'
+    selector: 'app-word-search',
+    templateUrl: './word-search.component.html'
 })
-export class VerbSearchComponent implements OnInit {
+export class WordSearchComponent implements OnInit {
 
     @Output() verbName: EventEmitter<string> = new EventEmitter<string>();
 
@@ -15,16 +15,17 @@ export class VerbSearchComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private searchVerbsService: SearchVerbsService
+        private searchWordService: SearchWordService
     ) {}
 
     ngOnInit(): void {
         this.subscribeToSearchControl();
-        this.searchControl.setValue(this.searchVerbsService.lastTypedWord);
+        this.searchControl.setValue(this.searchWordService.lastTypedWord);
     }
 
     private subscribeToSearchControl(): void {
         this.searchControl.valueChanges.pipe(
+            skip(1),
             debounceTime(800),
             distinctUntilChanged(),
             filter(v => Boolean(v))
