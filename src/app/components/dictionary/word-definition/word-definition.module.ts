@@ -15,7 +15,8 @@ import { AccordionModule } from '@core/components/accordion/accordion.module';
         WordDefinitionSkeletonComponent
     ],
     exports: [
-        WordDefinitionComponent
+        WordDefinitionComponent,
+        WordDefinitionSkeletonComponent
     ],
     imports: [
         CommonModule,
