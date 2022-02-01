@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { animations } from '@core/animations/animations';
 import { ActivatedRoute } from '@angular/router';
-import { VerbInterface } from '@models/verb.model';
-import { ConjugationContext } from '@models/conjugation-tables.interface';
+import { VerbInterface } from '@models/verbs/verb.model';
+import { ConjugationContext } from '@models/verbs/conjugation-tables.interface';
 
 @Component({
     selector: 'app-favorite-verb',

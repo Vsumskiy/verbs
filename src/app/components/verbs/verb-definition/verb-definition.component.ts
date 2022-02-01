@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ConjugatedFormsType, TensesTypesEnum, TenseType } from '@models/verb.model';
+import { ConjugatedFormsType, TensesTypesEnum, TenseType } from '@models/verbs/verb.model';
 
 
 interface ConjugatedForms {

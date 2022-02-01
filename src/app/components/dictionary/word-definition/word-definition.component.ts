@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { WordDefinitionInterface } from '@models/dictionary/word-definition.interface';
-import { AudioService } from '@core/services/audio.service';
+import { speechService } from '@core/services/speech.service';
+import {SearchWordService} from '@services/search-word.service';
 
 @Component({
     selector: 'app-word-definition',
@@ -11,11 +12,12 @@ export class WordDefinitionComponent {
     @Input() words: WordDefinitionInterface[];
 
     constructor(
-        private audioService: AudioService
+        private audioService: speechService,
+        private searchWordService: SearchWordService,
     ) {}
 
-    public playAudio(src: string): void {
-        this.audioService.play(src);
+    public playAudio(): void {
+        this.audioService.play(this.searchWordService.lastTypedWord);
     }
 
 }

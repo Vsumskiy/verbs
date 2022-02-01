@@ -4,7 +4,7 @@ import {Resolve,
     ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { VerbInterface } from '@models/verb.model';
+import { VerbInterface } from '@models/verbs/verb.model';
 import { SearchWordService } from '@services/search-word.service';
 import { SearchVerbsService } from '@services/search-verbs.service';
 

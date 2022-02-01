@@ -5,6 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 input:focus {
     font-size: 16px !important
+}
+
+button[disabled] {
+    color: rgba(0, 0, 0, .3);
 }

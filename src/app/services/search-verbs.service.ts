@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@environments/environment';
 import { Observable } from 'rxjs';
-import { VerbInterface } from '@models/verb.model';
+import { VerbInterface } from '@models/verbs/verb.model';
 import { tap } from 'rxjs/operators';
 import { SearchWordService } from '@services/search-word.service';
 

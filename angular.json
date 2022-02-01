@@ -43,9 +43,9 @@
             "production": {
               "budgets": [
                 {
-                    "type": "initial",
-                    "maximumWarning": "2mb",
-                    "maximumError": "5mb"
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -103,13 +103,25 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-                "src/styles/main.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "verbs"
+  "defaultProject": "verbs",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

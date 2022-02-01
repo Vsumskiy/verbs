@@ -7,7 +7,7 @@
             <div>
                 <div *ngFor="let phonetic of word.phonetics">
                     <div *ngIf="phonetic.audio">
-                        <button (click)="playAudio(phonetic.audio)">
+                        <button (click)="playAudio()">
                             <app-custom-icon iconName="volume-up"></app-custom-icon>
                         </button>
                         <span class="font-bold ml-2">

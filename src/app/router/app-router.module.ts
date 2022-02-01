@@ -26,6 +26,10 @@ export const appRoutes: Route[] = [
         loadChildren: () => import('@pages/dictionary/dictionary.module').then(m => m.DictionaryModule)
     },
     {
+        path: routerPathsConstant.flashCards,
+        loadChildren: () => import('@pages/flash-cards/flashcards.module').then(m => m.FlashcardsModule)
+    },
+    {
         path: '**',
         redirectTo: routerPathsConstant.home
     }

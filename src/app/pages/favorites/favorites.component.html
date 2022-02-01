@@ -30,9 +30,9 @@
     </div>
 
     <div [@animate]="{ value: '*', params: { delay: '5ms', scale: '0.8' } }"
-         class="w-full overflow-y-scroll" *ngIf="favoritesWords$ | async as favoriteWords">
+         class="w-full" *ngIf="favoritesWords$ | async as favoriteWords">
         <div class="bg-grey-200">
-            <div class="overflow-y-scroll">
+            <div class="overflow-y-auto">
                 <ul class="divide-y-2 divide-gray-100"
                     *ngIf="favoriteWords.length; else empty">
                     <li class="p-3 text-xl text-grey-700 flex justify-between outline-none"

@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { PronounEnum } from '@models/pronoun.enum';
+import { PronounEnum } from '@models/verbs/pronoun.enum';
 import { getUniqueArrayOfArray } from '@helpers/get-unique-array-of-array';
-import { ConjugationTableInterface } from '@models/conjugation-tables.interface';
+import { ConjugationTableInterface } from '@models/verbs/conjugation-tables.interface';
 
 @Component({
     selector: 'app-conjugation',

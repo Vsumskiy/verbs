@@ -2,5 +2,6 @@ export const routerPathsConstant = {
     home: 'home',
     favorites: 'favorites',
     verbs: 'verbs',
-    dictionary: 'dictionary'
+    dictionary: 'dictionary',
+    flashCards: 'flashcards'
 };
