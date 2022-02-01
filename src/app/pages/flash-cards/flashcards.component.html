@@ -32,7 +32,7 @@
                 </div>
             </app-flip-card>
 
-            <button (click)="showNext()">
+            <button [disabled]="isLoading" (click)="showNext()">
                 <app-custom-icon iconName="arrow-right"></app-custom-icon>
             </button>
         </div>

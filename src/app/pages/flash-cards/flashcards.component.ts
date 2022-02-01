@@ -12,6 +12,7 @@ export class FlashcardsComponent implements OnInit {
 
     public randomWord: RandomWordInterface;
     public currentIndex = 0;
+    public isLoading: boolean;
 
     constructor(
         private route: ActivatedRoute,
@@ -41,8 +42,10 @@ export class FlashcardsComponent implements OnInit {
             return;
         }
 
+        this.isLoading = true;
         this.randomWordsService.getRandomWod().subscribe(() => {
             this.initCurrentRandomWordByIndex();
+            this.isLoading = false;
         });
     }
 
