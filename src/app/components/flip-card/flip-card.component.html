@@ -1,1 +1,10 @@
-<p>flip-card works!</p>
+<div class="flip-card" (click)="flipCard()" [class.flipped]="isFlipped">
+    <div class="flip-card-inner">
+        <div class="flip-card-front flex justify-center items-center">
+            <ng-content select=".front"></ng-content>
+        </div>
+        <div class="flip-card-back flex justify-center items-center">
+            <ng-content select=".back"></ng-content>
+        </div>
+    </div>
+</div>

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-flip-card',
-  templateUrl: './flip-card.component.html',
-  styleUrls: ['./flip-card.component.css']
+    selector: 'app-flip-card',
+    templateUrl: './flip-card.component.html',
+    styleUrls: ['./flip-card.component.scss']
 })
-export class FlipCardComponent implements OnInit {
+export class FlipCardComponent {
 
-  constructor() { }
+    public isFlipped: boolean;
 
-  ngOnInit(): void {
-  }
-
+    public flipCard(): void {
+        this.isFlipped = !this.isFlipped;
+    }
 }

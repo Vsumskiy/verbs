@@ -5,11 +5,14 @@ import { FlipCardComponent } from './flip-card.component';
 
 
 @NgModule({
-  declarations: [
-    FlipCardComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        FlipCardComponent
+    ],
+    exports: [
+        FlipCardComponent
+    ],
+    imports: [
+        CommonModule
+    ]
 })
 export class FlipCardModule { }
