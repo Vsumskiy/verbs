@@ -6,10 +6,9 @@ import {RandomWordsService} from '@services/random-words.service';
 
 @Component({
     selector: 'app-flash-cards',
-    templateUrl: './flash-cards.component.html',
-    styleUrls: ['./flash-cards.component.scss']
+    templateUrl: './flashcards.component.html'
 })
-export class FlashCardsComponent implements OnInit {
+export class FlashcardsComponent implements OnInit {
 
     public randomWord: RandomWordInterface;
     public currentIndex = 0;

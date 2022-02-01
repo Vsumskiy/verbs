@@ -1,34 +1,36 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlashCardsComponent } from './flash-cards.component';
+import { FlashcardsComponent } from './flashcards.component';
 import {RouterModule, Routes} from '@angular/router';
-import {FlashCardsResolver} from '@pages/flash-cards/flash-cards.resolver';
+import {FlashcardsResolver} from '@pages/flash-cards/flashcards.resolver';
 import {BreadcrumbsModule} from '@app/components/breadcrumbs/breadcrumbs.module';
 import {FlexModule} from '@angular/flex-layout';
 import {CustomIconModule} from '@core/components/custom-icon/custom-icon.module';
+import {FlipCardModule} from '@app/components/flip-card/flip-card.module';
 
 const routers: Routes = [
     {
         path: '',
-        component: FlashCardsComponent,
+        component: FlashcardsComponent,
         resolve: {
-            resolver: FlashCardsResolver
+            resolver: FlashcardsResolver
         }
     }
 ];
 
 @NgModule({
     declarations: [
-        FlashCardsComponent
+        FlashcardsComponent
     ],
     imports: [
         CommonModule,
         RouterModule.forChild(routers),
         BreadcrumbsModule,
         FlexModule,
-        CustomIconModule
+        CustomIconModule,
+        FlipCardModule
     ],
-    providers: [FlashCardsResolver]
+    providers: [FlashcardsResolver]
 })
-export class FlashCardsModule { }
+export class FlashcardsModule { }
 

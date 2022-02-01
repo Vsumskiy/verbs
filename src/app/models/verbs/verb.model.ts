@@ -1,4 +1,4 @@
-import { ConjugationTablesInterface } from '@models/conjugation-tables.interface';
+import { ConjugationTablesInterface } from '@models/verbs/conjugation-tables.interface';
 
 export enum TensesTypesEnum {
     Infinitive = 'Infinitive',

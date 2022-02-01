@@ -7,7 +7,7 @@ import {RandomWordsService} from '@services/random-words.service';
 import {RandomWordInterface} from '@models/random-words/random-word.interface';
 
 @Injectable()
-export class FlashCardsResolver implements Resolve<RandomWordInterface> {
+export class FlashcardsResolver implements Resolve<RandomWordInterface> {
 
     constructor(
         private searchWordService: SearchWordService,
